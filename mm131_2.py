@@ -22,7 +22,6 @@ def start(url):
             res = requests.get(link,headers=headers)
             if res.status_code != 200:
                 print('二级数据未能抓取成功')
-                sys.exit(1)
             else:
                 s2 = BeautifulSoup(res.content.decode('gbk'))
                 page_number = s2.find('span', class_='page-ch').string.replace('共', '').replace('页', '')
